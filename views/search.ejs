@@ -1,0 +1,26 @@
+<!--views/index.ejs-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>キーワード検索結果「<%= search %>」</h1>
+
+    <% for(let i = 0; i < result.length; i++) { %>
+    <div class="card">
+      <h4><%= result[i].title %></h4>
+      <p>投稿日: <%= result[i].date %></p>
+      <p><%= result[i].content %></p>
+      <br>
+    </div>
+    <% } %>
+
+    <br>
+
+    <form action="/" method="GET">
+      <button type="submit">戻る</button>
+    </form>
+  </body>
+</html>

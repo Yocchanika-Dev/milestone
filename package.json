@@ -1,0 +1,25 @@
+{
+  "name": "project",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "postinstall": "npx prisma generate"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "6.19.3",
+    "prisma": "^6.19.3",
+    "@prisma/client": "6.19.3",
+    "cookie-parser": "~1.4.7",
+    "debug": "~4.4.3",
+    "dotenv": "18.0.6",
+    "ejs": "~7.0.1",
+    "express": "~5.2.1",
+    "http-errors": "~2.0.1",
+    "morgan": "~1.12.1",
+    "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "prisma": "6.19.3"
+  }
+}

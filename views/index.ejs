@@ -1,0 +1,40 @@
+<!--views/index.ejs-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>My Blog</h1>
+    <form action="/search" method="POST">
+      <label for="site-search">search:</label>
+      <input type="search" name="search" placeholder="Search..." required />
+      <button type="submit">🔍</button>
+    </form>
+
+    <br><br>
+    <h2>新しいブログ</h2>
+    <form action="/" method="POST">
+      タイトル:<input type="text" name="title" required /><br />
+      投稿日:<input type="text" name="date" required /><br />
+      内容:<br><textarea name="content" rows="4" cols="20"></textarea> <br />
+      <!-- 
+      <textarea name="content" rows="8" cols="50"></textarea> 
+      <input type="text" name="content" required />
+      -->
+      <button type="submit">追加</button>
+    </form>
+
+    <br><br>
+    <h2>投稿一覧</h2>
+    <% for(let i = 0; i < milestone.length; i++) { %>
+    <div class="card">
+      <h4><%= milestone[i].title %></h4>
+      <p>投稿日: <%= milestone[i].date %></p>
+      <p><%= milestone[i].content %></p>
+      <br>
+    </div>
+    <% } %>
+  </body>
+</html>
